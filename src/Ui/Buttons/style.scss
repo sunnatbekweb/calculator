@@ -1,0 +1,21 @@
+.btn1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 28px;
+    color: #00b7ff;
+    max-width: fit-content;
+    height: fit-content;
+    border: 1px solid transparent;
+    background-color: #f8f8ffce;
+    cursor: pointer;
+
+    &:active {
+        border: 1px solid transparent;
+    }
+
+    &:hover {
+        background-color: #FFF;
+    }
+}

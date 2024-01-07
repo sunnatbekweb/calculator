@@ -1,0 +1,23 @@
+.btn2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 28px;
+    color: ghostwhite;
+    width: 100%;
+    height: 256px;
+    border: none;
+    background: #17b890;
+    cursor: pointer;
+    border-radius: 0 0 10px 0;
+    transition: all 0.1s ease;
+
+    &:active {
+        border: 1px solid transparent;
+    }
+
+    &:hover {
+        background: #17b890e0;
+    }
+}

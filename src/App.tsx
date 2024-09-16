@@ -1,4 +1,3 @@
-import React from 'react';
 import Buttons from './Ui/Buttons';
 import Button2 from './Ui/Button2';
 

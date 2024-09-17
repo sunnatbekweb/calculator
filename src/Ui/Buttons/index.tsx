@@ -1,4 +1,4 @@
-import React, { useState, FC } from 'react';
+import { useState, FC } from "react";
 import "./style.scss";
 
 interface ChildProps {
@@ -6,20 +6,19 @@ interface ChildProps {
 }
 
 const Buttons: FC<ChildProps> = ({ text }) => {
-
-  const [click, setClick] = useState('')
+  const [click, setClick] = useState("");
 
   function setOnClick() {
     console.log(click);
-  };
+  }
 
-  setOnClick()
+  setOnClick();
 
   return (
-    <button className='btn1' onClick={() => setClick(text)}>
+    <button className="btn1" onClick={() => setClick(text)}>
       {text}
     </button>
-  )
-}
+  );
+};
 
-export default Buttons
+export default Buttons;

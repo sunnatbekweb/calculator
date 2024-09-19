@@ -3,12 +3,10 @@ function App() {
     <>
       <div className="container">
         <div className="calculator">
-          <div className="calculator_index">
-            <h2>0</h2>
-          </div>
-          <div className="calculator_buttons">
-            <div className="calculator_button"></div>
-            <div></div>
+          <h2 className="value">2+2</h2>
+          <h1 className="result">=4</h1>
+          <div className="buttons_wrapper">
+    
           </div>
         </div>
       </div>

@@ -27,7 +27,7 @@ button {
   max-width: 375px;
   width: 100%;
   background: #000807;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 175px 30px 30px 30px;
   position: relative;
 }
@@ -79,12 +79,14 @@ h2 {
 
 .container .calculator .buttons_wrapper button {
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #00b0a4 ;
   color: #ffffff;
-  background: #020b0b;
-  transition: all 0.3s linear;
+  background: transparent;
+  transition: all 0.5s linear;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .container .calculator .buttons_wrapper button:hover {
-  background: linear-gradient(180deg, #00b0a454 0%, #185c7360 56.94%);
+  background: linear-gradient(180deg, #00b0a454 0%, #416e7c60 56.94%);
 }

@@ -1,22 +1,40 @@
 import { useState } from "react";
 
 function App() {
-  const [value, setValue] = useState<string | undefined>();
+  const [value, setValue] = useState<string>("");
+  const [result, setResult] = useState<string>("");
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log(e.currentTarget.dataset.value);
-    setValue(e.currentTarget.dataset.value);
+    const newValue = e.currentTarget.dataset.value;
+    if (newValue) {
+      setValue((prevValue) => prevValue + newValue);
+    }
+  };
+
+  const calculateResult = () => {
+    try {
+      const evaluatedResult = eval(value.replace("x", "*"));
+      setResult(evaluatedResult.toString());
+    } catch (error) {
+      setResult("Error");
+    }
   };
 
   return (
     <>
       <div className="container">
         <div className="calculator">
-          <h2 className="value">{value}</h2>
-          <h1 className="result">=4</h1>
+          <h2 className="value">{value ? value : '0'}</h2>
+          <h1 className="result">{result && `=${result}`}</h1>
 
           <div className="buttons_wrapper">
-            <button data-value="C" onClick={handleClick}>
+            <button
+              data-value="C"
+              onClick={() => {
+                setValue("");
+                setResult("");
+              }}
+            >
               C
             </button>
             <button data-value="%" onClick={handleClick}>
@@ -25,7 +43,12 @@ function App() {
             <button data-value="/" onClick={handleClick}>
               /
             </button>
-            <button data-value="de onClick={handleClick}l">icon</button>
+            <button
+              data-value="del"
+              onClick={() => setValue(value.slice(0, -1))}
+            >
+              icon
+            </button>
             <button data-value="7" onClick={handleClick}>
               7
             </button>
@@ -68,7 +91,9 @@ function App() {
             <button data-value="." onClick={handleClick}>
               .
             </button>
-            <button className="equal">=</button>
+            <button className="equal" onClick={calculateResult}>
+              =
+            </button>
           </div>
         </div>
       </div>
